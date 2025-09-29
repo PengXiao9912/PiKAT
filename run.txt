@@ -1,0 +1,16 @@
+CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --nproc_per_node=4 PiKAT.py \
+  --data_dir data \
+  --save_dir ./runs/exp_rel_lag_mmg \
+  --batch_size 16 \
+  --accum_steps 2 \
+  --attn_type rellag \
+  --attn_rel_lag \
+  --tau_min 2 \
+  --tau 8.0 \
+  --attn_entropy_w 0.0 \
+  --mmg_w 0.1 \
+  --traj_smooth_w 1e-3 \
+  --return_attn \
+  --viz_fit \
+  --viz_fit_points 20000 \
+  --viz_dir ./runs/exp_rel_lag_mmg/viz
